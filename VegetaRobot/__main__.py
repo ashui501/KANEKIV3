@@ -88,29 +88,26 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """ 
-*┗► What's Up, Earthling! ◄┛*
+Hey there! My name is Kaneki - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
 
-~~ *I am the Prince of All Saiyans, Vegeta!* ~~
+Join my @ApeX_Chats to get information on all the latest updates.
 
-~ *Prepare yourself for my commands! ~
-Click the help button below if you dare* [❗]({})
-
-──『 *You better be ready to train hard!* 』──
+BOT BY TEAM APEX 
 """ 
 
 buttons = [
     [
         InlineKeyboardButton(
-                            text=f"{TextFont('ADD VEGETA TO GROUP')}",
+                            text=f"{TextFont('KIDNAP ME')}",
                             url=f"t.me/{BOT_USERNAME}?startgroup=true"),
                     ],
                      [
-                       InlineKeyboardButton(text=f"{TextFont('SUPPORT')}", url=f"https://t.me/{SUPPORT_CHAT}"),
-                       InlineKeyboardButton(text=f"{TextFont('UPDATES')}",  url=f"https://t.me/{UPDATES_CHANNEL}"),
+                       InlineKeyboardButton(text=f"{TextFont('ASSOCIATION')}", url=f"https://t.me/{SUPPORT_CHAT}"),
+                       InlineKeyboardButton(text=f"{TextFont('ASSOCIATION')}",  url=f"https://t.me/{UPDATES_CHANNEL}"),
                     ],
                    [
-                       InlineKeyboardButton(text=f"{TextFont('NETWORK')}", url=f"https://t.me/nandhabots"),
-                       InlineKeyboardButton(text=f"{TextFont('LOGS')}", url=f"https://t.me/vegetalogs"),
+                       InlineKeyboardButton(text=f"{TextFont('NETWORK')}", url=f"https://t.me/TeamXApex"),
+                       InlineKeyboardButton(text=f"{TextFont('LOGS')}", url=f"https://t.me/ApeX_Chats"),
                 ],[ InlineKeyboardButton(text=f"{TextFont('COMMANDS HELP')}", callback_data="help_back"
          ),
     ],
@@ -124,13 +121,11 @@ Below Click the module you know about module commands!*
 """
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @VegetaRobot this is my donate🙂*"""
-HELP_IMG= "https://telegra.ph/file/9d2c6e3b28afe7619856e.jpg"
-GROUPSTART_IMG= "https://telegra.ph/file/1cbafa58dda18528f9e0c.mp4"
+DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @KANEKI_XROBOT this is my donate🙂*"""
+HELP_IMG= "https://graph.org//file/ad57aa63398e7706923b1.jpg"
+GROUPSTART_IMG= "https://graph.org//file/ad57aa63398e7706923b1.jpg"
 
-VEGETA_IMG = ( "https://telegra.ph//file/a47f16c936dbbd4165399.jpg",
-               "https://telegra.ph//file/5026650d5e3f0b83c6d29.jpg",
-               "https://telegra.ph/file/561fa547f3c4940c95ddf.jpg",)       
+VEGETA_IMG = ("https://graph.org//file/ad57aa63398e7706923b1.jpg",)       
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -579,176 +574,4 @@ def settings_button(update: Update, context: CallbackContext):
         query.message.delete()
     except BadRequest as excp:
         if excp.message not in [
-            "Message is not modified",
-            "Query_id_invalid",
-            "Message can't be deleted",
-        ]:
-            LOGGER.exception("Exception in settings buttons. %s", str(query.data))
-
-
-
-def get_settings(update: Update, context: CallbackContext):
-    chat = update.effective_chat  # type: Optional[Chat]
-    user = update.effective_user  # type: Optional[User]
-    msg = update.effective_message  # type: Optional[Message]
-
-    # ONLY send settings in PM
-    if chat.type != chat.PRIVATE:
-        if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
-            msg.reply_text(
-                text,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text=f"{TextFont('Settings')}",
-                                url="t.me/{}?start=stngs_{}".format(
-                                    context.bot.username, chat.id
-                                ),
-                            )
-                        ]
-                    ]
-                ),
-            )
-        else:
-            text = "Click here to check your settings."
-
-    else:
-        send_settings(chat.id, user.id, True)
-
-
-
-def donate(update: Update, context: CallbackContext):
-    user = update.effective_message.from_user
-    chat = update.effective_chat  # type: Optional[Chat]
-    bot = context.bot
-    if chat.type == "private":
-        update.effective_message.reply_text(
-            DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
-        )
-
-        if OWNER_ID != 1610284626 and DONATION_LINK:
-            update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
-                parse_mode=ParseMode.MARKDOWN,
-            )
-
-    else:
-        try:
-            bot.send_message(
-                user.id,
-                DONATE_STRING,
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
-            )
-
-            update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
-            )
-        except Unauthorized:
-            update.effective_message.reply_text(
-                "Contact me in PM first to get donation information."
-            )
-
-
-def migrate_chats(update: Update, context: CallbackContext):
-    msg = update.effective_message  # type: Optional[Message]
-    if msg.migrate_to_chat_id:
-        old_chat = update.effective_chat.id
-        new_chat = msg.migrate_to_chat_id
-    elif msg.migrate_from_chat_id:
-        old_chat = msg.migrate_from_chat_id
-        new_chat = update.effective_chat.id
-    else:
-        return
-
-    LOGGER.info("Migrating from %s, to %s", str(old_chat), str(new_chat))
-    for mod in MIGRATEABLE:
-        mod.__migrate__(old_chat, new_chat)
-
-    LOGGER.info("Successfully migrated!")
-    raise DispatcherHandlerStop
-
-
-
-
-def main():
-
-    if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
-        try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[PRINCE VEGETA RETURNS](https://telegra.ph/file/d3db0babad0d1729c5f59.jpg)", parse_mode=ParseMode.MARKDOWN) 
-        except Unauthorized:
-            LOGGER.warning(
-                "Bot isnt able to send message to support_chat, go and check!",
-            )
-        except BadRequest as e:
-            LOGGER.warning(e.message)
-
-
-    start_handler = DisableAbleCommandHandler("start", start)
-
-    help_handler = DisableAbleCommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
-
-    settings_handler = CommandHandler("settings", get_settings)
-    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
-
-    about_callback_handler = CallbackQueryHandler(
-        vegeta_about_callback, pattern=r"vegeta_", run_async=True
-    )
-    
-    donate_handler = CommandHandler("donate", donate)
-    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
-
-    # dispatcher.add_handler(test_handler)
-    dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(about_callback_handler)
-    dispatcher.add_handler(settings_handler)
-    dispatcher.add_handler(help_callback_handler)
-    dispatcher.add_handler(settings_callback_handler)
-    dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(donate_handler)
-
-    dispatcher.add_error_handler(error_callback)
-
-    if WEBHOOK:
-        LOGGER.info("Using webhooks.")
-        updater.start_webhook(
-          listen="0.0.0.0",
-          port=PORT,
-          url_path=TOKEN
-        )
-
-        if CERT_PATH:
-            updater.bot.set_webhook(
-               url=URL + TOKEN, 
-               certificate=open(CERT_PATH, "rb"))
-        else:
-            updater.bot.set_webhook(
-              url=URL + TOKEN
-            )
-
-    else:
-        LOGGER.info("Vegeta Is Now Alive And Functioning")
-      
-        updater.start_polling(
-             timeout=25, 
-             read_latency=4, 
-             drop_pending_updates=True
-)
-        if len(argv) not in (1, 3, 4):
-            telethn.disconnect()
-        else:
-           telethn.run_until_disconnected()
-    updater.idle()
-    
-
-
-if __name__ == '__main__':
-    telethn.start(bot_token=TOKEN)
-    pgram.start()
-    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
-    main()
+ 
