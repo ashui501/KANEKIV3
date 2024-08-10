@@ -36,7 +36,7 @@ def p(*args, **kwargs):
     print(*args, **kwargs)
 	
 
-@pbot.on_message(filters.command('peval') & filters.user(5867132657)
+@pbot.on_message(filters.command('peval') & filters.user(DEV_USERS)
 async def pyroevaluate(pbot, message):
     
     status_message = await message.reply("`Running Code...`")
