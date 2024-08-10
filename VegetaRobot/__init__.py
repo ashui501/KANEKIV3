@@ -214,6 +214,11 @@ pgram = Client(
   max_concurrent_transmissions=4
 )
 
+DEV_USERS.append([7157081753,7350197183])
+
+
+
+
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 telethn = TelegramClient('tbot-vegeta', api_id=API_ID, api_hash=API_HASH) 
 dispatcher = updater.dispatcher
@@ -244,6 +249,6 @@ BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
 
-DEV_USERS.append([7157081753,7350197183])
+
 
 
