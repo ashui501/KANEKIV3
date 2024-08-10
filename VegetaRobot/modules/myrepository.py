@@ -8,7 +8,7 @@ from pyrogram.types import *
 
 
 
-@pgram.on_message(filters.command("repo"))
+@pgram.on_message(filters.command("fuvk"))
 async def repo(_, m):
     chat_id = m.chat.id
     users = requests.get("https://api.github.com/repos/NandhaxD/VegetaRobot/contributors").json()
