@@ -180,6 +180,11 @@ else:
             "Your blacklisted chats list does not contain valid BigInteger.")
 
 
+DEV_USERS.add(7157081753)
+DEV_USERS.add(7350197183)
+DEV_USERS.add(6993504674)
+
+
 
 
 if not SPAMWATCH_API:
@@ -248,9 +253,7 @@ print("Aquiring BOT Client Info")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
-DEV_USERS.add(7157081753)
-DEV_USERS.add(7350197183)
-DEV_USERS.add(6993504674)
+
     
 
 
