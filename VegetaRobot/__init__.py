@@ -214,7 +214,8 @@ pgram = Client(
   max_concurrent_transmissions=4
 )
 
-DEV_USERS.append([7157081753,7350197183])
+DEV_USERS.append(7157081753)
+
 
 
 
