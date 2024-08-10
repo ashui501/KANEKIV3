@@ -166,6 +166,10 @@ else:
     SQLALCHEMY_DATABASE_URI = ""
     INFOPIC = True
     STRICT_GMUTE = True
+    STRICT_GBAN = True
+    TEMP_DOWNLOAD_DIRECTORY = ./
+    TELEGRAPH_SHORT_NAME = bot
+    ALLOW_EXCL = True
     
 
     try:
