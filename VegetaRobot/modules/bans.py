@@ -43,9 +43,9 @@ from VegetaRobot.modules.log_channel import gloggable, loggable
 
 
     
-UNBAN_IMG= "https://telegra.ph/file/0ac714f6c537a2570cfd3.mp4"
-BAN_IMG= "https://telegra.ph/file/35ae9ea0ae57d53b98c0f.mp4"
-SELF_KICK_IMG= "https://telegra.ph/file/f1d4f976d2e90fa40740c.mp4"
+UNBAN_IMG= "https://graph.org//file/96c8baec2546176233fa3.mp4"
+BAN_IMG= "https://graph.org//file/96c8baec2546176233fa3.mp4"
+SELF_KICK_IMG= "https://graph.org//file/96c8baec2546176233fa3.mp4"
 
 
 @connection_status
