@@ -123,7 +123,7 @@ Below Click the module you know about module commands!*
 HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @KANEKI_XROBOT this is my donate🙂*"""
 HELP_IMG= "https://graph.org//file/ad57aa63398e7706923b1.jpg"
-GROUPSTART_IMG= "https://graph.org//file/ad57aa63398e7706923b1.jpg"
+GROUPSTART_IMG= "https://graph.org//file/96c8baec2546176233fa3.mp4"
 
 VEGETA_IMG = ("https://graph.org//file/ad57aa63398e7706923b1.jpg",)       
 
@@ -238,7 +238,7 @@ def start(update: Update, context: CallbackContext):
         first_name = update.effective_user.first_name
         update.effective_message.reply_animation(
              GROUPSTART_IMG, 
-             caption="*Greetings!\n ┗► {} ◄┛,\nSaiyan Warrior reporting\nEnergy level now : {} *".format(
+             caption="*Greetings!\n ┗► {} ◄┛,\nKING GHOUL reporting\nEnergy level now : {} *".format(
              first_name, uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
@@ -673,7 +673,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[PRINCE VEGETA RETURNS](https://telegra.ph/file/d3db0babad0d1729c5f59.jpg)", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[KANEKI GHOUL RETURNS](https://graph.org//file/df43931eaff415eb850ad.jpg)", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
