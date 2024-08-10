@@ -164,6 +164,9 @@ else:
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     SQLALCHEMY_DATABASE_URI = ""
+    INFOPIC = True
+    STRICT_GMUTE = True
+    
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
