@@ -19,7 +19,7 @@ class Config(object):
 
     API_ID = 24074986   # integer value, dont use ""
     API_HASH = "f4f6272a85d0e50e39a24cb378be118d"
-    TOKEN = "7256020855:AAGrICFaNKU4kZEAidTeImcPXqei5jSEBmA"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    TOKEN = "7281123784:AAGIuyyQQ88S3KamTIBxtDen-N_jh1uRA7s"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     SQLALCHEMY_DATABASE_URI = "postgres://rkffvakt:o7mkbX8hS7h5IPhMyPHSteGaWvuDYOp-@surus.db.elephantsql.com/rkffvakt" #Use Your ElephantSQL
     OWNER_ID = 5835284385  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "AKIRA_ISHIKKI"
