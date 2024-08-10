@@ -169,7 +169,7 @@ else:
     STRICT_GMUTE = True
     STRICT_GBAN = True
     TEMP_DOWNLOAD_DIRECTORY = "./"
-    TELEGRAPH_SHORT_NAME = "bot"
+    TELEGRAPH_SHORT_NAME = "VegetRobot"
     ALLOW_EXCL = True
     
 
