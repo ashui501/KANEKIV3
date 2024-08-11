@@ -187,6 +187,13 @@ def send_help(chat_id, text, keyboard=None):
         reply_markup=keyboard,
     )
 
+def test(update: Update, context: CallbackContext):
+    # pprint(eval(str(update)))
+    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text("This person edited a message")
+    print(update.effective_message)
+    
+
 
 def start(update: Update, context: CallbackContext):
     args = context.args
@@ -248,13 +255,6 @@ def start(update: Update, context: CallbackContext):
         )
 
 
-
-
-def test(update: Update, context: CallbackContext):
-    # pprint(eval(str(update)))
-    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
-    update.effective_message.reply_text("This person edited a message")
-    print(update.effective_message)
 
 
 
