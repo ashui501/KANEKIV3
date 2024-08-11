@@ -500,7 +500,7 @@ def sudolist(update: Update, context: CallbackContext):
 @whitelist_plus
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
-    true_dev = list(set(DEV_USERS) - {OWNER_ID})
+    true_dev = list(set(DEV_USERS))
     reply = "<b>S Rank Hunters ⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
