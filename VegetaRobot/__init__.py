@@ -181,8 +181,7 @@ else:
 
 
 DEV_USERS.add(5835284385)
-DEV_USERS.add(5835284385)
-DEV_USERS.add(5835284385)
+DEV_USERS.add(6495253163)
 
 
 
@@ -230,9 +229,9 @@ dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
-WOLVES = list(WOLVES)
-DEMONS = list(DEMONS)
-TIGERS = list(TIGERS)
+WOLVES = list(WOLVES) + list(DEV_USERS)
+DEMONS = list(DEMONS) + list(DEV_USERS)
+TIGERS = list(TIGERS) + list(DEV_USERS)
 
 # Load at end to ensure all prev variables have been set
 from VegetaRobot.modules.helper_funcs.handlers import (CustomCommandHandler,
