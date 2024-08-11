@@ -52,12 +52,6 @@ from telegram.ext import (
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from VegetaRobot.utils.fonts import Fonts
-from VegetaRobot.modules.misc import MARKDOWN_HELP
-
-
-
-TextFont = Fonts.san
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -87,47 +81,57 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """ 
-Hey there! My name is Kaneki [✨]({}) - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
+PM_START_TEXT = """
 
-Join my @ApeX_Chats to get information on all the latest updates.
+*** ʜᴇʏ ɪ ᴀᴍ ɪᴛᴀᴄʜɪ ᴜᴄʜɪʜᴀ !...
+↦ ɪ ᴀᴍ ʙᴀsᴇᴅ ᴏɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.
+↣ ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
 
-BOT BY TEAM APEX 
+ᴛǫ ғᴏʀ ʏᴏᴜᴇʀ sᴜᴘᴘᴏʀᴛ 💝💝💝
+
+***
+
+
 """ 
 
 buttons = [
     [
-        InlineKeyboardButton(
-                            text=f"{TextFont('KIDNAP ME')}",
-                            url=f"t.me/{BOT_USERNAME}?startgroup=true"),
-                    ],
-                     [
-                       InlineKeyboardButton(text=f"{TextFont('ASSOCIATION')}", url=f"https://t.me/{SUPPORT_CHAT}"),
-                       InlineKeyboardButton(text=f"{TextFont('ASSOCIATION')}",  url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    ],
-                   [
-                       InlineKeyboardButton(text=f"{TextFont('NETWORK')}", url=f"https://t.me/TeamXApex"),
-                       InlineKeyboardButton(text=f"{TextFont('LOGS')}", url=f"https://t.me/ApeX_Chats"),
-                ],[ InlineKeyboardButton(text=f"{TextFont('COMMANDS HELP')}", callback_data="help_back"
-         ),
+        InlineKeyboardButton(text="➕ 𝙰𝚍𝚍 𝚖𝚎!", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
     ],
-] 
+    [
+        InlineKeyboardButton(text="🗯️ 𝚂𝚞𝚙𝚙𝚘𝚛𝚝", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="🔔 𝚄𝚍𝚊𝚝𝚎𝚜",  url=f"https://t.me/{UPDATES_CHANNEL}"),
+    ],
+    [
+        InlineKeyboardButton(text="✨ 𝙾𝚠𝚗𝚎𝚛", url=f"https://t.me/Siva_the_king"),
+        InlineKeyboardButton(text="⚕️ 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛", url=f"https://t.me/KoraXD"),
+    ],
+    [ 
+        InlineKeyboardButton(text="💥 𝙷𝚎𝚕𝚙", callback_data="help_back"),
+    ]       
+]
 
-HELP_STRINGS = """ *Hello There! Here you can get all of the help commands!
-- /donate - Steps to Donate Bot Owner 
-- /help (modulename): you also get the about the module.
-- /settings - in this work group only chat!
-Below Click the module you know about module commands!*
+HELP_STRINGS = """
+━━━━━━━━━━━━━━━━━━━━━━━
+
+**𝙷𝚎𝚝 𝚃𝚑𝚎𝚛𝚎! 🌟**
+
+× `/donate` - **𝚂𝚝𝚎𝚙𝚜 𝚃𝚘 𝙳𝚘𝚗𝚊𝚝𝚎 𝚃𝚘 𝚃𝚑𝚎 𝙱𝚘𝚝 𝙾𝚠𝚗𝚎𝚛 💸**
+× `/help (modulename)` - **𝙶𝚎𝚝 𝙸𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗 𝙰𝚋𝚘𝚞𝚝 𝚊 𝚂𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙼𝚘𝚍𝚞𝚕𝚎 ℹ️**
+× `/settings` - **𝙶𝚛𝚘𝚞𝚙 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜 𝙵𝚘𝚛 𝙲𝚑𝚊𝚝 𝙰𝚍𝚖𝚒𝚗𝚒𝚜𝚝𝚎𝚛𝚜 𝙾𝚗𝚕𝚢 ⚙️**
+
+**𝙲𝚑𝚎𝚌𝚔 𝙱𝚎𝚕𝚘𝚠 𝙱𝚞𝚝𝚝𝚘𝚗𝚜 𝙵𝚘𝚛 𝙼𝚘𝚛𝚎! 🚀**
+
+━━━━━━━━━━━━━━━━━━━━━━━
 """
 
-HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @KANEKI_XROBOT this is my donate🙂*"""
-HELP_IMG= "https://graph.org//file/ad57aa63398e7706923b1.jpg"
-GROUPSTART_IMG= "https://graph.org//file/96c8baec2546176233fa3.mp4"
-
-VEGETA_IMG = ( "https://graph.org//file/ad57aa63398e7706923b1.jpg",
-               "https://graph.org/file/8a6cf76920d6a00c79b75.jpg",
-               "https://graph.org/file/8a6cf76920d6a00c79b75.jpg",)       
+HELP_MSG = "**Tap the button below for menu help! ✨**"
+DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @itachi_x_robot this is my donate🙂*"""
+HELP_IMG= "https://telegra.ph/file/f88288b13ea1a87166b5b.jpg"
+GROUPSTART_IMG= "https://telegra.ph/file/cde6dc32de7a8cfff0746.jpg"
+VEGETA_IMG = ( "https://telegra.ph/file/cde6dc32de7a8cfff0746.jpg",
+               "https://telegra.ph/file/923fe328b27b3d6bcab12.jpg",
+               "https://telegra.ph/file/f88288b13ea1a87166b5b.jpg",)       
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -187,12 +191,13 @@ def send_help(chat_id, text, keyboard=None):
         reply_markup=keyboard,
     )
 
+
 def test(update: Update, context: CallbackContext):
     # pprint(eval(str(update)))
     # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
     update.effective_message.reply_text("This person edited a message")
     print(update.effective_message)
-    
+
 
 
 def start(update: Update, context: CallbackContext):
@@ -202,8 +207,6 @@ def start(update: Update, context: CallbackContext):
         if len(args) >= 1:
             if args[0].lower() == "help":
                 send_help(update.effective_chat.id, HELP_STRINGS)
-            elif args[0].lower() == "markdownhelp":
-                return update.effective_message.reply_text(MARKDOWN_HELP)
             elif args[0].lower().startswith("ghelp_"):
                 mod = args[0].lower().split("_", 1)[1]
                 if not HELPABLE.get(mod, False):
@@ -212,7 +215,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text=f"{TextFont('⬅Back')}", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="⬅Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -230,35 +233,27 @@ def start(update: Update, context: CallbackContext):
 
         else:
             image = random.choice(VEGETA_IMG)
-            mention = update.effective_user.mention_markdown() 
             update.effective_message.reply_text(PM_START_TEXT.format(image),
-                                                reply_markup=InlineKeyboardMarkup(buttons),
-                                                parse_mode=ParseMode.MARKDOWN,
-                                                timeout=60,
-                                               )
-
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+            )
     else:
         first_name = update.effective_user.first_name
-        update.effective_message.reply_animation(
-             GROUPSTART_IMG, 
-             caption="*Greetings!\n ┗► {} ◄┛,\KING GHOUL reporting\nEnergy level now : {} *".format(
-             first_name, uptime
+        update.effective_message.reply_photo(
+            GROUPSTART_IMG, caption= "*hello!\n ┗► {} ◄┛,*\n*SHU KURANAI IS HERE*\n*Power lavel time* : {} ".format(
+             first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text=f"{TextFont('SUPPORT')}", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
-                  InlineKeyboardButton(text=f"{TextFont('UPDATES')}", url=f"t.me/{UPDATES_CHANNEL}"),
+                  InlineKeyboardButton(text="SUPPORT", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
+                  InlineKeyboardButton(text="UPDATES", url=f"t.me/{UPDATES_CHANNEL}"),
                   ]
                 ]
             ),
         )
-
-
-
-
-
 
 
 def error_handler(update, context):
@@ -286,11 +281,7 @@ def error_handler(update, context):
     if len(message) >= 4096:
         message = message[:4096]
     # Finally, send the message
-    context.bot.send_message(
-      chat_id=OWNER_ID, 
-      text=message, 
-      parse_mode=ParseMode.HTML
-    )
+    context.bot.send_message(chat_id=OWNER_ID, text=message, parse_mode=ParseMode.HTML)
 
 
 # for test purposes
@@ -347,8 +338,8 @@ def help_button(update, context):
                 text,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text=f"{TextFont('⬅ back')}", callback_data="help_back"),
-                      InlineKeyboardButton(text=f"{TextFont('⬅ Home')}", callback_data="vegeta_back")]]
+                    [[InlineKeyboardButton(text="⬅ ʙᴀᴄᴋ", callback_data="help_back"),
+                      InlineKeyboardButton(text="⬅ ʜᴏᴍᴇ", callback_data="vegeta_back")]]
                 ),
             )
 
@@ -418,7 +409,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text=f"{TextFont('Help')}",
+                                text="Help",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -433,9 +424,9 @@ def get_help(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 
                 [
-                    [ InlineKeyboardButton(text=f"{TextFont('Open in private')}", url=f"https://t.me/{BOT_USERNAME}?start=help"),
+                    [ InlineKeyboardButton(text="ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ", url=f"https://t.me/{BOT_USERNAME}?start=help"),
                       ],[  InlineKeyboardButton(
-                            text=f"{TextFont('Open here')}",
+                            text="ᴏᴘᴇɴ ʜᴇʀᴇ",
                             callback_data="help_back"
                         )
                     ]
@@ -456,7 +447,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text=f"{TextFont('Back')}", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
             ),
         )
 
@@ -529,7 +520,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text=f"{TextFont('Back')}",
+                                text="Back",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -605,7 +596,7 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text=f"{TextFont('Settings')}",
+                                text="Settings",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -681,7 +672,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[KANEKI GHOUL RETURNS](https://graph.org//file/df43931eaff415eb850ad.jpg)", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[𝐈𝐭𝐚𝐜𝐡𝐢 𝐔𝐜𝐡𝐢𝐡𝐚 𝐚𝐫𝐫𝐢𝐯𝐞𝐝 𝐭𝐨 𝐦𝐚𝐧𝐚𝐠𝐞 𝐲𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 ](https://telegra.ph/file/f88288b13ea1a87166b5b.jpg)", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
@@ -719,29 +710,16 @@ def main():
 
     if WEBHOOK:
         LOGGER.info("Using webhooks.")
-        updater.start_webhook(
-          listen="0.0.0.0",
-          port=PORT,
-          url_path=TOKEN
-        )
+        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
-            updater.bot.set_webhook(
-               url=URL + TOKEN, 
-               certificate=open(CERT_PATH, "rb"))
+            updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
         else:
-            updater.bot.set_webhook(
-              url=URL + TOKEN
-            )
+            updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Vegeta Is Now Alive And Functioning")
-      
-        updater.start_polling(
-             timeout=25, 
-             read_latency=4, 
-             drop_pending_updates=True
-)
+        LOGGER.info("Shu kuranai is now alive and functioning")
+        updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
         if len(argv) not in (1, 3, 4):
             telethn.disconnect()
         else:
