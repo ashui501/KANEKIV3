@@ -125,7 +125,9 @@ DONATE_STRING = """*don't need donate I'm free for everyone add your group's in 
 HELP_IMG= "https://graph.org//file/ad57aa63398e7706923b1.jpg"
 GROUPSTART_IMG= "https://graph.org//file/96c8baec2546176233fa3.mp4"
 
-VEGETA_IMG = ("https://graph.org//file/ad57aa63398e7706923b1.jpg", "https://graph.org/file/8a6cf76920d6a00c79b75.jpg")       
+VEGETA_IMG = ( "https://graph.org//file/ad57aa63398e7706923b1.jpg",
+               "https://graph.org/file/8a6cf76920d6a00c79b75.jpg",
+               "https://graph.org/file/8a6cf76920d6a00c79b75.jpg",)       
 
 IMPORTED = {}
 MIGRATEABLE = []
