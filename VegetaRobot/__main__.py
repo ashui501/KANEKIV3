@@ -87,8 +87,8 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """ 
-Hey there! My name is Kaneki [✨]({1}) - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
+PM_START_TEXT = f""" 
+Hey there! My name is Kaneki [✨]({}) - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
 
 Join my @ApeX_Chats to get information on all the latest updates.
 
@@ -231,7 +231,7 @@ def start(update: Update, context: CallbackContext):
         else:
             image = random.choice(VEGETA_IMG)
             mention = update.effective_user.mention_markdown() 
-            update.effective_message.reply_text(PM_START_TEXT.format(image,mention),
+            update.effective_message.reply_text(PM_START_TEXT.format(image),
                                                 reply_markup=InlineKeyboardMarkup(buttons),
                                                 parse_mode=ParseMode.MARKDOWN,
                                                 timeout=60,
