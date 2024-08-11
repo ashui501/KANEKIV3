@@ -88,7 +88,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """ 
-Hey there! My name is Kaneki [✨]({}) - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
+Hey there! My name is Kaneki [✨]({1}) - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
 
 Join my @ApeX_Chats to get information on all the latest updates.
 
