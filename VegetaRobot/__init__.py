@@ -181,7 +181,6 @@ else:
 
 
 DEV_USERS.add(5835284385)
-DEV_USERS.add(6495253163)
 
 
 
