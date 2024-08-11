@@ -87,7 +87,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = f""" 
+PM_START_TEXT = """ 
 Hey there! My name is Kaneki [✨]({}) - I'm here to help you manage your groups! Use /help to find out more about how to use me to my full potential.
 
 Join my @ApeX_Chats to get information on all the latest updates.
@@ -241,7 +241,7 @@ def start(update: Update, context: CallbackContext):
         first_name = update.effective_user.first_name
         update.effective_message.reply_animation(
              GROUPSTART_IMG, 
-             caption="*Greetings!\n ┗► {} ◄┛,\nSaiyan Warrior reporting\nEnergy level now : {} *".format(
+             caption="*Greetings!\n ┗► {} ◄┛,\KING GHOUL reporting\nEnergy level now : {} *".format(
              first_name, uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
