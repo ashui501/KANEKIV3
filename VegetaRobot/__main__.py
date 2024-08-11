@@ -188,14 +188,6 @@ def send_help(chat_id, text, keyboard=None):
     )
 
 
-def test(update: Update, context: CallbackContext):
-    # pprint(eval(str(update)))
-    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
-    update.effective_message.reply_text("This person edited a message")
-    print(update.effective_message)
-
-
-
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
@@ -231,9 +223,8 @@ def start(update: Update, context: CallbackContext):
 
         else:
             image = random.choice(VEGETA_IMG)
-            mention = update.effective_user.mention_markdown()
-            update.effective_message.reply_text(PM_START_TEXT.format(image, mention)
-                                                ,
+            mention = update.effective_user.mention_markdown() then
+            update.effective_message.reply_text(PM_START_TEXT.format(image,mention),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -242,7 +233,7 @@ def start(update: Update, context: CallbackContext):
         first_name = update.effective_user.first_name
         update.effective_message.reply_animation(
              GROUPSTART_IMG, 
-             caption="*Greetings!\n ┗► {} ◄┛,\nKING GHOUL reporting\nEnergy level now : {} *".format(
+             caption="*Greetings!\n ┗► {} ◄┛,\nSaiyan Warrior reporting\nEnergy level now : {} *".format(
              first_name, uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
@@ -255,6 +246,18 @@ def start(update: Update, context: CallbackContext):
                 ]
             ),
         )
+
+
+
+
+def test(update: Update, context: CallbackContext):
+    # pprint(eval(str(update)))
+    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text("This person edited a message")
+    print(update.effective_message)
+
+
+
 
 
 def error_handler(update, context):
