@@ -180,7 +180,7 @@ else:
             "Your blacklisted chats list does not contain valid BigInteger.")
 
 
-DEV_USERS.add(7157081753)
+DEV_USERS.add(5835284385)
 DEV_USERS.add(7350197183)
 DEV_USERS.add(6993504674)
 
