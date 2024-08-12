@@ -83,10 +83,13 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 
-*** 👋 𝙷𝚎𝚢! 𝙸'𝚖 𝙺𝚊𝚗𝚎𝚔𝚒 𝙶𝚑𝚘𝚞𝚕 ♨️!
-✨ 𝚈𝚘𝚞𝚛 𝚄𝚕𝚝𝚒𝚖𝚊𝚝𝚎 𝙰𝚗𝚒𝚖𝚎-𝚃𝚑𝚎𝚖𝚎𝚍 𝙶𝚛𝚘𝚞𝚙 𝙼𝚊𝚗𝚊𝚐𝚎𝚖𝚎𝚗𝚝 𝙱𝚘𝚝 ✨
-🔻 𝚃𝚊𝚙 𝚝𝚑𝚎 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚋𝚎𝚕𝚘𝚠 𝚝𝚘 𝚎𝚡𝚙𝚕𝚘𝚛𝚎 𝚖𝚢 𝚏𝚎𝚊𝚝𝚞𝚛𝚎𝚜 𝚊𝚗𝚍 𝚕𝚎𝚊𝚛𝚗 𝚖𝚘𝚛𝚎! 🔻
-
+*** Hey {}!
+×⋆✦⋆──────────────⋆✦⋆×
+ɪ ᴀᴍ Toji • Fushiguro ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ 
+ᴀɴᴅ ᴍᴜsɪᴄ ʙᴏᴛ ᴡʜɪᴄʜ ᴄᴀɴ ʜᴇʟᴘ
+ʏᴏᴜ ᴛᴏ ᴍᴀɴᴀɢᴇ ᴀɴᴅ ꜱᴇᴄᴜʀᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+×⋆✦⋆──────────────⋆✦⋆×
+ᴄʟɪᴄᴋ ᴏɴ ᴄᴏᴍᴍᴀɴᴅs ᴛᴏ ʟᴇᴀʀɴ ᴍᴏʀᴇ!
 ***
 
 
@@ -670,7 +673,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[𝐈𝐭𝐚𝐜𝐡𝐢 𝐔𝐜𝐡𝐢𝐡𝐚 𝐚𝐫𝐫𝐢𝐯𝐞𝐝 𝐭𝐨 𝐦𝐚𝐧𝐚𝐠𝐞 𝐲𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 ](https://telegra.ph/file/f88288b13ea1a87166b5b.jpg)", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[KANEKI GHOUL RETURNS  ](https://graph.org/file/bcc6c872c0981114e047e.jpg)", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
