@@ -127,9 +127,9 @@ HELP_MSG = "**Tap the button below for menu help! ✨**"
 DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @itachi_x_robot this is my donate🙂*"""
 HELP_IMG= "https://telegra.ph/file/f88288b13ea1a87166b5b.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/cde6dc32de7a8cfff0746.jpg"
-VEGETA_IMG = ( "https://telegra.ph/file/cde6dc32de7a8cfff0746.jpg",
-               "https://telegra.ph/file/923fe328b27b3d6bcab12.jpg",
-               "https://telegra.ph/file/f88288b13ea1a87166b5b.jpg",)       
+VEGETA_IMG = ( "https://graph.org/file/bcc6c872c0981114e047e.jpg",
+               "https://graph.org/file/47166e2082db8b1daa56b.jpg",
+               "https://graph.org/file/9a6ff2b81fda03fb974a4.jpg")       
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -231,7 +231,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             image = random.choice(VEGETA_IMG)
-            update.effective_message.reply_text(PM_START_TEXT.format(image),
+            update.effective_message.reply_photo(image, caption=PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
