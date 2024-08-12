@@ -14,7 +14,7 @@ async def get_response(prompt: str) -> str:
     }
     data = {
         "text": prompt,
-        "role": "You're a helpful assistant chatbot, you're name Vegeta, you're personality looks like Vegeta from dragon balls"
+        "role": "You're a helpful assistant chatbot, you're name Kaneki, you're personality looks like Kaneki from Tokyo Ghoul"
     }
     
     async with session.post(url, data=data, headers=headers) as response:
