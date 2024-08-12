@@ -94,18 +94,18 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➕ 𝙰𝚍𝚍 𝚖𝚎!", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
+        InlineKeyboardButton(text="KIDNAP ME!", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="🗯️ 𝚂𝚞𝚙𝚙𝚘𝚛𝚝", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(text="🔔 𝚄𝚍𝚊𝚝𝚎𝚜",  url=f"https://t.me/{UPDATES_CHANNEL}"),
+        InlineKeyboardButton(text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="UPDATES",  url=f"https://t.me/{UPDATES_CHANNEL}"),
     ],
     [
-        InlineKeyboardButton(text="✨ 𝙾𝚠𝚗𝚎𝚛", url=f"https://t.me/Siva_the_king"),
-        InlineKeyboardButton(text="⚕️ 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛", url=f"https://t.me/KoraXD"),
+        InlineKeyboardButton(text="OWNER", url=f"https://t.me/TeamXApex"),
+        InlineKeyboardButton(text="MASTER", url=f"https://t.me/AKIRA_ISHIKKI"),
     ],
     [ 
-        InlineKeyboardButton(text="💥 𝙷𝚎𝚕𝚙", callback_data="help_back"),
+        InlineKeyboardButton(text="HELP", callback_data="help_back"),
     ]       
 ]
 
