@@ -100,12 +100,12 @@ buttons = [
         InlineKeyboardButton(text="KIDNAP ME!", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(text="UPDATES",  url=f"https://t.me/{UPDATES_CHANNEL}"),
+        InlineKeyboardButton(text="𝗦𝗨𝗣𝗣𝗢𝗥𝗧", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="𝗨𝗣𝗗𝗔𝗧𝗘𝗦",  url=f"https://t.me/{UPDATES_CHANNEL}"),
     ],
     [
-        InlineKeyboardButton(text="OWNER", url=f"https://t.me/TeamXApex"),
-        InlineKeyboardButton(text="MASTER", url=f"https://t.me/AKIRA_ISHIKKI"),
+        InlineKeyboardButton(text="𝗢𝗪𝗡𝗘𝗥", url=f"https://t.me/TeamXApex"),
+        InlineKeyboardButton(text="𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥", url=f"https://t.me/AKIRA_ISHIKKI"),
     ],
     [ 
         InlineKeyboardButton(text="HELP", callback_data="help_back"),
