@@ -97,7 +97,7 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="KIDNAP ME!", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
+        InlineKeyboardButton(text="𝗞𝗜𝗗𝗡𝗔𝗣 𝗠𝗘!", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="𝗦𝗨𝗣𝗣𝗢𝗥𝗧", url=f"https://t.me/{SUPPORT_CHAT}"),
@@ -108,7 +108,7 @@ buttons = [
         InlineKeyboardButton(text="𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥", url=f"https://t.me/AKIRA_ISHIKKI"),
     ],
     [ 
-        InlineKeyboardButton(text="HELP", callback_data="help_back"),
+        InlineKeyboardButton(text="𝗛𝗘𝗟𝗣", callback_data="help_back"),
     ]       
 ]
 
@@ -127,10 +127,10 @@ HELP_STRINGS = """
 """
 
 HELP_MSG = "**Tap the button below for menu help! ✨**"
-DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @itachi_x_robot this is my donate🙂*"""
-HELP_IMG= "https://telegra.ph/file/f88288b13ea1a87166b5b.jpg"
+DONATE_STRING = """*don't need donate I'm free for everyone add your group's in @KANEKI_XROBOT this is my donate🙂*"""
+HELP_IMG= "https://graph.org/file/47166e2082db8b1daa56b.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/cde6dc32de7a8cfff0746.jpg"
-VEGETA_IMG = ( "https://graph.org/file/bcc6c872c0981114e047e.jpg",
+VEGETA_IMG = ( "https://graph.org/file/47166e2082db8b1daa56b.jpg",
                "https://graph.org/file/47166e2082db8b1daa56b.jpg",
                "https://graph.org/file/9a6ff2b81fda03fb974a4.jpg")       
 
