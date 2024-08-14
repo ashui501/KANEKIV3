@@ -50,7 +50,7 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
-from telegram.utils.helpers import escape_markdown
+from telegram.utils.helpers import escape_markdown, mention_markdown
 
 
 def get_readable_time(seconds: int) -> str:
@@ -234,7 +234,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             image = random.choice(VEGETA_IMG)
-            mention = update.effective_user.mention_markdown(user_id, username) 
+            mention = mention_markdown(user_id, username) 
             update.effective_message.reply_photo(image, caption=PM_START_TEXT.format(mention),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
