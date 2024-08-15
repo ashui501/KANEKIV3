@@ -234,7 +234,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             image = random.choice(VEGETA_IMG)
-            mention = mention_markdown(user_id, username, version=1)
+            mention = mention_markdown(user_id, name, version=1)
 
             update.effective_message.reply_photo(image, caption=PM_START_TEXT.format(mention),
                 reply_markup=InlineKeyboardMarkup(buttons),
